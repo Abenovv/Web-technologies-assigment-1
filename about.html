@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div id="navbar"></div>
+        <div class="about">
+            <h1>Who we are?</h1>
+            <p>
+                Book library - the best library that sells the collection of books.
+                You can order or pre-order, all of that is available for customers, 
+                and we distinguish from other by quick service and convinient way of getting it.
+            </p>
+
+
+            <table id="Schedule">
+                <caption>Schedule</caption>
+                <thead>
+                    <tr>
+                        <th>Time \ Days of week</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
+                        <th>Sunday</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td></td>
+                    <td colspan="5" style="margin: 50px;">10:00-20:00</td>
+                    <td>10:00-18:00</td>
+                    <td>10:00-15:00</td>
+                </tr>
+            </table>
+
+            <img src="images/Book library.png" alt="Check your internet connection" style="width: 500px; position:relative; align-items:center;margin-top: 20px;"></img>
+            
+            <hr style="color: rgb(0, 0, 0);">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/kul-g_30HuU?si=NdtUaKEohF0dlzil" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                style="margin-top: 20px;"></iframe>
+            
+    
+            <h3><u>"Book opens <em>not only</em> the knowledge, it <em>opens the view</em> of the world"</u></h3>
+            <h2 style="color: blue">Timeline</h2>
+            <ol class="list">
+                <li>2000 Yerkebulan founded</li>
+                <li>2010 We had 10 places at Astana</li>
+                <li>2018 Started IT and digital e-Books</li>
+                <li>2026 One of the biggest E-library in Kazakhstan</li>
+            </ol>
+            
+            
+            <h2>Facts about this place</h2>
+            <ul>
+                <li>We have 10k books on e-Library</li>
+                <li>Our books are the cheapest</li>
+                <li>e-Library is the best option for beginner</li>
+                <li>You can find all of your favourite genre</li>
+            </ul>
+        </div>
+
+        <script>
+            async function loadNav(){
+                const response = await fetch("index.html");
+                const text = await response.text();
+
+                const parser = new DOMParser();
+                const page = parser.parseFromString(text, "text/html");
+
+                const nav = page.querySelector("nav");
+
+                document.getElementById("navbar").innerHTML = nav.outerHTML;
+            }
+
+            loadNav();
+        </script>
+    </body>
+</html>

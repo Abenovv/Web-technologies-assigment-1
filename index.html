@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+    <header>
+        <nav>
+            <span>Book Library</span>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <div class="books">
+        <h1>Books</h1>
+        <ul>
+            <li>Man of Flower <img src="images/Man of Flower.png" alt="Man of Flower"></li>
+            <li>The deep psychology <img src="images/The deep psychology.png" alt="The Deep Psychology"></li>
+            <li>Thinking Fast techniques <img src="images/Thinking fast techniques.png" alt="Thinking fast techniques"></li>
+        </ul>
+    </div>
+    <div id="about"></div>
+    <div id="contact"></div>
+    <script>
+        async function loadAbout(){
+            const response = await fetch("about.html");
+            const html = await response.text();
+
+            document.getElementById("about").innerHTML = html;
+        }
+        async function loadContact(){
+            const response = await fetch("contact.html");
+            const html = await response.text();
+
+            document.getElementById("contact").innerHTML = html;
+        }
+        loadAbout();
+        loadContact();
+    </script>
+</body>
+</html>
